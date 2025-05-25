@@ -15,7 +15,7 @@ data class PackageDeliveryEvent(
 
     val deliveryAddress: Address,
 
-    val currentLocation: Address,
+    val currentAddress: Address,
 )
 
 data class Address(
