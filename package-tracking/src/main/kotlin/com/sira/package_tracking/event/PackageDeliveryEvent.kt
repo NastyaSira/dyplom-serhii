@@ -1,5 +1,7 @@
 package com.sira.package_tracking.event
 
+import java.time.LocalDateTime
+
 
 @JvmInline
 value class PackageID(
@@ -9,6 +11,7 @@ value class PackageID(
 data class PackageDeliveryEvent(
     val packagedID: PackageID,
     val event: PackageDeliveryEventType,
+    val timestamp: LocalDateTime,
 
     val deliveryAddress: Address,
 
