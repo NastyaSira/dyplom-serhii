@@ -1,7 +1,13 @@
 package com.sira.package_tracking.event
 
+
+@JvmInline
+value class PackageID(
+    val value: String
+)
+
 data class PackageDeliveryEvent(
-    val packagedID: String,
+    val packagedID: PackageID,
     val event: PackageDeliveryEventType,
 
     val deliveryAddress: Address,
