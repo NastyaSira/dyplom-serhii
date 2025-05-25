@@ -5,14 +5,13 @@ import com.sira.package_tracking.event.PackageDeliveryEvent
 
 interface DeliveryPackageNotificationService {
 
-    fun deliverySMSNotification(
+    fun sendSMSNotification(
         phone: PhoneNumber,
         event: PackageDeliveryEvent
     )
 
-    fun deliveryEmailNotification(
-        phone: PhoneNumber,
+    fun sendEmailNotification(
+        email: EmailAddress,
         event: PackageDeliveryEvent
     )
-
 }
