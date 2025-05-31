@@ -46,7 +46,7 @@ public class SmsModuleTests {
     }
 
     @Test
-    public void testController_некоректніДані() {
+    public void testController_incorrect() {
         // некоректні вхідні дані
         TwilioDetails details = new TwilioDetails(
                 null,
@@ -62,7 +62,7 @@ public class SmsModuleTests {
     }
 
     @Test
-    public void testTwilioDetails_гетери() {
+    public void testTwilioDetails() {
      
         TwilioDetails details = new TwilioDetails(
                 "+380937928706"
