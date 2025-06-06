@@ -11,3 +11,9 @@ data class PackageDeliveryStatus (
 
     val history: List<PackageDeliveryEvent>
 )
+
+val EMPTY_STATUS = PackageDeliveryStatus (
+    packageID = PackageID(""),
+    lastUpdateTimestamp = LocalDateTime.now(),
+    history = emptyList()
+)

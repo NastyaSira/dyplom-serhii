@@ -1,8 +1,10 @@
 package com.sira.package_tracking.status
 
 import com.sira.package_tracking.event.PackageDeliveryEvent
+import org.springframework.stereotype.Service
 import java.lang.RuntimeException
 
+@Service
 class PackageDeliveryStatusEventsProcessor {
 
     fun processPackageEvent(
