@@ -3,6 +3,7 @@ plugins {
 	kotlin("plugin.spring") version "2.1.0"
 	id("org.springframework.boot") version "4.0.0-SNAPSHOT"
 	id("io.spring.dependency-management") version "1.1.7"
+	id("org.flywaydb.flyway") version "6.4.3"
 }
 
 group = "com.sira"
@@ -28,6 +29,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
 	implementation("org.apache.kafka:kafka-streams")
 	implementation("com.twilio.sdk:twilio:9.2.1")
+	implementation("org.flywaydb:flyway-core:6.4.3")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")

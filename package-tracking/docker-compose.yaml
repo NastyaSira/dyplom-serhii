@@ -1,17 +1,23 @@
 services:
   database:
-    image: 'postgres:15.2'
+    image: postgres
+    container_name: postgres
     ports:
-      - '5432'
+      - "5432:5432"
     environment:
       - 'POSTGRES_USER=myuser'
-      - 'POSTGRES_D=mydatabase'
+      - 'POSTGRES_PASSWORD=secret'
+    healthcheck:
+          test: [ "CMD-SHELL", "pg_isready -d postgres" ]
+          interval: 30s
+          timeout: 10s
+          retries: 5
   broker:
     image: apache/kafka:latest
     hostname: broker
     container_name: broker
     ports:
-      - 9092:9092
+      - "9092:9092"
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT,CONTROLLER:PLAINTEXT
