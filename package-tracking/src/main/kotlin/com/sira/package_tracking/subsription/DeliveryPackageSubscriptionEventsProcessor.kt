@@ -1,7 +1,9 @@
 package com.sira.package_tracking.subsription
 
 import com.sira.package_tracking.event.PackageDeliveryEvent
+import org.springframework.stereotype.Service
 
+@Service
 class DeliveryPackageSubscriptionEventsProcessor(
     private val notificationService: DeliveryPackageNotificationService,
     private val subscriptionService: DeliveryPackageSubscriptionService

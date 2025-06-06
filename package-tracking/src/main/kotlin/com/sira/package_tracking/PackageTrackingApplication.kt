@@ -1,5 +1,6 @@
 package com.sira.package_tracking
 
+import org.apache.kafka.streams.KafkaStreams
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.event.ApplicationReadyEvent
 import org.springframework.boot.runApplication
@@ -22,7 +23,10 @@ class KafkaStreamsTopologiesInitializer(
 	override fun onApplicationEvent(event: ApplicationReadyEvent) {
 		val props = Properties()
 		topologies.forEach {
-			it.startTopology(props)
+			val topology = it.createTopology()
+
+			KafkaStreams(topology, props)
+				.start()
 		}
 	}
 }

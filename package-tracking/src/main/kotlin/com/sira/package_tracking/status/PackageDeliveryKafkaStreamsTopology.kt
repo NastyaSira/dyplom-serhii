@@ -17,9 +17,7 @@ class PackageDeliveryStatusKafkaStreamsTopology(
 ) : KafkaStreamsTopology {
 
 
-    private val topology: Topology
-
-    init {
+    override fun createTopology(): Topology {
         val builder = StreamsBuilder()
 
 
@@ -37,11 +35,6 @@ class PackageDeliveryStatusKafkaStreamsTopology(
                 Materialized.with(Serdes.String(), PackageDeliveryStatusSerde())
             )
 
-        topology = builder.build()
-    }
-
-    override fun startTopology(props: Properties) {
-        KafkaStreams(topology, props)
-            .start()
+        return builder.build()
     }
 }
