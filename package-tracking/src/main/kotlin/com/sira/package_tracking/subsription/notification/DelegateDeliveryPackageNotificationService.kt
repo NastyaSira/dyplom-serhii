@@ -16,7 +16,7 @@ class DelegateDeliveryPackageNotificationService(
         phone: PhoneNumber,
         event: PackageDeliveryEvent
     ) {
-        TODO("Not yet implemented")
+        smsService.sendSMS(phone, event)
     }
 
     override fun sendEmailNotification(
