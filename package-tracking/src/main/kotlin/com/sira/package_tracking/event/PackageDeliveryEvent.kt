@@ -9,7 +9,7 @@ value class PackageID(
 )
 
 data class PackageDeliveryEvent(
-    val packagedID: PackageID,
+    val packageID: PackageID,
     val event: PackageDeliveryEventType,
     val timestamp: LocalDateTime,
 
@@ -31,4 +31,5 @@ enum class PackageDeliveryEventType {
     DISPATCHED_FROM_LOCATION,
     ARRIVED_TO_LOCATION,
     DELIVERED,
+    NOT_FOUND,
 }

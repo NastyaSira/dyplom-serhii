@@ -11,12 +11,12 @@ class PackageDeliveryStatusEventsProcessor {
         event: PackageDeliveryEvent,
         currentStatus: PackageDeliveryStatus
     ): PackageDeliveryStatus {
-        if (event.packagedID != currentStatus.packageID) {
-            throw RuntimeException("Mismatching ids of event(${event.packagedID}) and status(${currentStatus.packageID}) for ${event.packagedID})")
+        if (event.packageID != currentStatus.packageID) {
+            throw RuntimeException("Mismatching ids of event(${event.packageID}) and status(${currentStatus.packageID}) for ${event.packageID})")
         }
 
         return PackageDeliveryStatus(
-            packageID = event.packagedID,
+            packageID = event.packageID,
             lastUpdateTimestamp = event.timestamp,
             history = currentStatus.history + event
         )

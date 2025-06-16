@@ -8,7 +8,6 @@ data class PackageDeliveryStatus (
     val packageID: PackageID,
     val lastUpdateTimestamp: LocalDateTime,
 
-
     val history: List<PackageDeliveryEvent>
 )
 

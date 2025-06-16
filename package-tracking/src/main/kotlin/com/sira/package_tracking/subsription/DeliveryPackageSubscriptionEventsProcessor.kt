@@ -12,7 +12,7 @@ class DeliveryPackageSubscriptionEventsProcessor(
     fun processEvent(
         event: PackageDeliveryEvent,
     ) {
-        event.packagedID.let { subscriptionService.findActiveSubscriptionsFor(it)}
+        event.packageID.let { subscriptionService.findActiveSubscriptionsFor(it)}
             .forEach {
                 when (it) {
                     is EmailDeliverySubscription -> notificationService.sendEmailNotification(

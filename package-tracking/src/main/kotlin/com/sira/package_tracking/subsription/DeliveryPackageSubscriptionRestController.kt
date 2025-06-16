@@ -34,7 +34,7 @@ class DeliveryPackageSubscriptionRestController(
         @RequestBody request: TestEmailRequest,
     ) {
         processor.processEvent(PackageDeliveryEvent(
-            packagedID = request.packageID,
+            packageID = request.packageID,
             event = PackageDeliveryEventType.DELIVERED,
             timestamp = LocalDateTime.now(),
             deliveryAddress = Address("43 Uvileyna st", "Krolevets", "41300", "UA", "Home"),

@@ -18,9 +18,10 @@ class EmailNotificationService(
     ) {
 
         val message = when (event.event) {
-            PackageDeliveryEventType.DELIVERED -> "The package ${event.packagedID} is delivered"
-            PackageDeliveryEventType.ARRIVED_TO_LOCATION -> "The package ${event.packagedID} is arrived to location"
-            PackageDeliveryEventType.DISPATCHED_FROM_LOCATION -> "The package ${event.packagedID} is dispatched from location"
+            PackageDeliveryEventType.NOT_FOUND -> "The package ${event.packageID} is not found"
+            PackageDeliveryEventType.DELIVERED -> "The package ${event.packageID} is delivered"
+            PackageDeliveryEventType.ARRIVED_TO_LOCATION -> "The package ${event.packageID} is arrived to location ${event.currentAddress}"
+            PackageDeliveryEventType.DISPATCHED_FROM_LOCATION -> "The package ${event.packageID} is dispatched from location ${event.currentAddress}"
         }
 
         sender.send(SimpleMailMessage().apply {
