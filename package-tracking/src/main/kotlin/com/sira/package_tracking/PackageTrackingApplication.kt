@@ -21,12 +21,12 @@ class KafkaStreamsTopologiesInitializer(
 ) : ApplicationListener<ApplicationReadyEvent> {
 
 	override fun onApplicationEvent(event: ApplicationReadyEvent) {
-		val props = Properties()
-		topologies.forEach {
-			val topology = it.createTopology()
-
-			KafkaStreams(topology, props)
-				.start()
-		}
+//		val props = Properties()
+//		topologies.forEach {
+//			val topology = it.createTopology()
+//
+//			KafkaStreams(topology, props)
+//				.start()
+//		}
 	}
 }

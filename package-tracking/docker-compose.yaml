@@ -1,5 +1,5 @@
 services:
-  database:
+  database2:
     image: postgres
     container_name: postgres
     ports:

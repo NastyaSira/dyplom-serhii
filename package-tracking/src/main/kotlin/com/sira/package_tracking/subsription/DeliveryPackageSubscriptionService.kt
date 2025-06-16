@@ -36,4 +36,6 @@ interface DeliveryPackageSubscriptionService {
     fun findActiveSubscriptionsFor(
         packageID: PackageID
     ): List<DeliverySubscription>
+
+    fun findAllActiveSubscriptions(): List<DeliverySubscription>
 }
